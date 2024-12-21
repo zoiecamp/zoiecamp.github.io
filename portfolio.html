@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoie's Games</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #333; /* Dark background */
+            color: #fff; /* Light text for contrast */
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .game {
+            background: #444; /* Slightly lighter background for contrast */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        .game img {
+            width: 100%;
+            height: auto;
+        }
+
+        .game-details {
+            padding: 15px;
+        }
+
+        .game-details h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .game-details p {
+            margin: 10px 0;
+        }
+
+        .game-details a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .game-details a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Zoie Camp</h1>
+    <p>University of Michigan | Student Game Developer</p>
+</header>
+
+<div class="container">
+    <div class="game-grid">
+        <div class="game">
+            <img src="zelda_gameplay.gif" alt="Game 1 Thumbnail">
+            <div class="game-details">
+                <h2>Legend of Zelda Remaster</h2>
+                <p>A recreation of the first dungeon of the original 1986 Legend of Zelda. Press 4 to switch to a custom level where you will solve puzzles and defeat enemies with the help of a trusty sidekick.</p>
+                <p>Teammate: Anna Stewart</p>
+                <p>My Contributions: Enemy movement and damage, Sword, Room transitions, Custom level mechanics</p>
+                <p>Created using Unity and C#</p>
+                <a href="https://zoiecamp.itch.io/legend-of-zelda-remaster" target="_blank">Download on Itch.io</a>
+            </div>
+        </div>
+
+        <div class="game">
+            <img src="nll_gameplay.gif" alt="Game 2 Thumbnail">
+            <div class="game-details">
+                <h2>No Light Left</h2>
+                <p>Rapid prototype built in two weeks.</p>
+                <p>Navigate through pitch-black levels in this high-stakes 2D platformer. Use your light carefully - its charge is limited, and its light attracts enemies.</p>
+                <p>Created using Unity and C#</p>
+                <a href="https://zoiecamp.itch.io/no-light-left" target="_blank">Play on Itch.io</a>
+            </div>
+        </div>
+
+        <div class="game">
+            <img src="rdr_gameplay.gif" alt="Game 3 Thumbnail">
+            <div class="game-details">
+                <h2>Rainy Day Rush</h2>
+                <p>Run, jump, and glide your way through this 2d side-scrolling platformer with nothing but your trusty umbrella as you try to make it to your interview. But be careful, you won't get that job easily; there are dangers lurking around every corner. Brave the weather and keep your suit clean to look your best for the interview - hope you get the job!</p>
+                <p>Teammates: Selena Wang, Arvin Bansal, Ryan Duan, Jason Zhou</p>
+                <p>My Contributions:</p>
+                <ul>
+                    <li>Designed and drew art for the level 1 and 2 backgrounds, text bubbles, buttons, and UI panels</li>
+                    <li>Designed levels 1 and 2 alongside teammate Selena Wang</li>
+                    <li>Implemented the checkpoint and dialogue systems</li>
+                    <li>Implemented aesthetic details including parallax and scene transitions</li>
+                    <li>Implemented the end scene at the top of the final skyscraper</li>
+                </ul>
+                <p>Created using Unity and C#</p>
+                <a href="https://umbrellaheroes.itch.io/rainy-day-rush" target="_blank">Play on Itch.io</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
