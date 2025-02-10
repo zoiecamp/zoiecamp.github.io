@@ -25,21 +25,40 @@
             margin: 0;
         }
 
+        .box {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            width: 50%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
     </style>
 </head>
 <body>
 
 <header>
     <h1>DevBlog #1: 01/26/2025 - 02/09/2025</h1>
-    <p>Smithy UI & Gear Production</p>
     <a href="index.html" style="color: #BFE5F5;">Back</a>
 </header>
 
-<div style="width: 100%; color: white;"> 
-    <p>  This will be the text of the blog!</p>
+<div class="box">
+    <p>The focus of the past 2 weeks was implementing the gear system in the game — producing gear at the smithy, and equipping it on adventurers at the tavern. I was tasked with handling the smithy and gear production half of this task. </p>
+    <p><strong>Total Time: </strong>12h 45m</p>
+    <p><strong>(8h 45m) Implementation of Smithy UI & Gear Production</strong></p>
+    <p>During the first week, I spent 2 hours creating the initial prototype of the gear production system. This included a UI with panels to build 3 different types of gear (weapon, armor, and charm), a dropdown to choose the rarity of gear to build (weak, solid, strong, or splendid), costs that are affected by the rarity level, a button to build the gear, a timer to count down until the gear is ready, and a button to collect the finished gear.</p>
+    <p>During the second week, I spent another 2 hours polishing and finishing up this system. I made it so that pressing collect actually adds gear of the chosen type and rarity to the player’s inventory, finalized the math for costs to charge the player, and most importantly, implemented a static class to manage the gear building timers when the UI is inactive.</p>
+    <p>Throughout this process, I spent almost 5 hours trying to resolve two massive bugs with the collect button that I still don’t actually understand.</p>
+    <ul>
+        <li>After pressing the collect button and adding the gear to the inventory, I tried to set the collect button inactive and the build button back to active. But no matter what I did, the collect button would not go away after clicking it. I spent probably 2 hours banging my head against a wall, adding debug statements everywhere, and trying every way I know of to execute a chunk of code (invoke, coroutines, boolean flags) before trying to have the collect button call 2 functions in its on-click method: one to add the gear to the inventory, and a separate one to switch the buttons. I still have no idea why that worked vs. doing both things in the same function.</li>
+        <li>After choosing a rarity and having the costs update accordingly, the collected gear would always be of weak rarity. I spent about 3 hours banging my head against a wall trying to figure out why and where the value was changing/being reset. I put debugging statements after each step of the gear production process - choosing a rarity, pressing build, finishing the countdown, and pressing collect. The second I pressed the collect button, the rarity would switch from whatever it was set to back to weak. While debugging, I tried setting other variables in various parts of the code and found out that every variable would reset to its initial default value after pressing the collect button. It seemed that maybe the UI panel was being reset on click, but I tried debugging in the Awake, Update, OnEnable, and Start functions, and nothing weird seemed to be happening. I finally got it to work when I moved the collect gear logic from the gear panel script to the parent smithy UI script. I still have no idea why it works like this and wasn't working before.</li>
+    </ul>
+    <p><strong>(4h) Studio Meetings</strong></p>
+    <p>I attended the 11am-1pm studio meetings on both Sundays of this 2-week sprint. There, I discussed with other team members about what the gear system should look like and shared updates on my progress.</p>
 </div>
-
-
 
 </body>
 </html>
