@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devblog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #333; /* Dark background */
+            color: #fff; /* Light text for contrast */
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .box {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            position: absolute;
+            left: 50%;
+            width: 80%;
+            transform: translateX(-50%);
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Adds space between images */
+        }
+
+        .image-container img {
+            width: 30%; /* Adjusts width so all fit in a row */
+            max-width: 300px; /* Prevents them from getting too big */
+            height: auto; /* Maintains aspect ratio */
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>DevBlog #2: 02/09/2025 - 02/23/2025</h1>
+    <a href="index.html" style="color: #BFE5F5;">Back</a>
+</header>
+
+<div class="box">
+    <p>My focus over the last 2 weeks was adding juice to the game in the form of special particle effects for the buildings. I was assigned with creating effects for the wizard tower and the main tower. This was an open-ended and creative task, which was difficult for me because I work best when I have a clear guideline of what to implement and what it should look like. It also involved a lot of brainstorming and exploration in Unity’s particle system, which means a lot of the time I spent can’t necessarily be seen in the final result.</p>
+    <p><strong>Total Time: </strong>12h 15m</p>
+    <p><strong>(45m) Finished Up Gear System</strong></p>
+    <p>I spent 45 minutes at the beginning of the week finishing up the gear system from the previous 2 weeks, cleaning up the code and making sure the scene could get merged in without any conflicts. The main version of the game now officially includes a mechanism to build gear and equip it on adventurers.</p>
+
+    <p><strong>(2h) Particle System Research & Exploration</strong></p>
+    <p>I spent 2 hours researching & brainstorming ideas for the building particle effects. I watched some video overviews of Unity’s particle system, dug around inside the project to figure out where the particles would need to be implemented, and found the following magical-looking effects for inspiration: </p>
+    <div class="image-container">
+        <img src="fire_inspo.png" alt="Image 1">
+        <img src="orb_inspo.png" alt="Image 2">
+    </div>
+
+    <p><strong>(5h 30m) Particle Effects Implementation</strong></p>
+    <p>After some research and brainstorming, I spent the next hour and 45 minutes getting some experience with the particle system and implementing this very simple effect of sparkles swirling around the inside of the orb on the wizard tower.</p>
+
+    <p>I spent another hour and 45 minutes implementing this fire effect on the main tower.</p>
+    <video width="80%" controls>
+        <source src="main_tower.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <p>Finally, I spent 2 hours creating this orb effect around the orb on the wizard tower.</p>
+    <video width="80%" controls>
+        <source src="wizard_tower.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <p>My biggest challenge in implementing these things was the subjective nature of the task — not knowing exactly what effects to create or exactly what they should look like. My perfectionist tendencies definitely came out and I spent a lot of time making tiny tweaks to values in the particle system to try to create the “perfect” look. Despite that, I’m unsure of whether anybody else on the project will like or agree with these choices so all of this work may be scrapped, which is a tough fact to face.</p>
+    
+    <p><strong>(4h) Studio Meetings</strong></p>
+    <p>I attended two of the 11am-1pm Sunday studio meetings where the team shared updates on progress.</p>
+  
+</div>
+
+</body>
+</html>
