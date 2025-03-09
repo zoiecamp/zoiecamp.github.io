@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devblog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #333; /* Dark background */
+            color: #fff; /* Light text for contrast */
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .box {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            position: absolute;
+            left: 50%;
+            width: 80%;
+            transform: translateX(-50%);
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Adds space between images */
+        }
+
+        .image-container img {
+            width: 30%; /* Adjusts width so all fit in a row */
+            max-width: 300px; /* Prevents them from getting too big */
+            height: auto; /* Maintains aspect ratio */
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>DevBlog #2: 02/09/2025 - 02/23/2025</h1>
+    <a href="index.html" style="color: #BFE5F5;">Back</a>
+</header>
+
+<div class="box">
+    <p>My task for this week was once again related to adding juice and polish to the game, but this time in the form of creating some kind of animated shader effect for building effect ranges. This was once again an open-ended and creative task, which was once again difficult for me. It felt like there was more pressure this week because the team liked the particle effects I implemented last week, so it felt like there were higher expectations to implement something that looks good. As mentioned in my previous post, I work best with a clear guideline of what to implement and what it should look like, and I struggle with these kinds of subjective tasks where what “looks good” is different to everybody. But, since I only had one week, most of my time was spent brainstorming ideas and learning about shaders and tilemaps, so I don’t really have any good results yet.</p>
+    <p><strong>Total Time: </strong>6h</p>
+    <p><strong>(4h) Researching & Experimenting with Shaders and Tilemaps</strong></p>
+    <p>There are two buildings in the game that have an effect that works within a range of tiles: the farm and the wizard tower. Currently, these ranges are represented by a simple shaded color:</p>
+  
+    <div class="image-container">
+        <img src="og_tower_range.png" alt="Image 1">
+        <img src="og_farm_range.png" alt="Image 2">
+    </div>
+
+    <p>I spent a lot of time looking through the project and figuring out how these tile ranges are implemented. I was then able to create a very simple shader that changes the color over time: </p>
+  
+    <video width="80%" controls style="width: 30%; height: auto;">
+        <source src="range_color_fade.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  
+    <p>I wanted to create some kind of effect like magical mist swirling over the ground or rings emanating from the center of the range, but I was unable to figure out how to overlay an image/shader on this tilemap. From what I found, you can only create effects on each individual tile in the tilemap. I decided to experiment with animating each tile individually: </p>
+  
+    <video width="80%" controls style="width: 30%; height: auto;">
+        <source src="range_animated_tiles.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <p>I'm aware that this doesn’t actually look good yet, but this was mostly just an experimentation/proof-of-concept. I think there is some potential with this idea, so in the next sprint, I will focus on polishing this and hopefully creating something that looks better.</p>
+    
+    <p><strong>(2h) Studio Meeting</strong></p>
+    <p>Since this was a one-week sprint due to spring break, I attended one of the Sunday studio meetings, where the team once again shared updates on progress.</p>
+  
+</div>
+
+</body>
+</html>
