@@ -62,27 +62,68 @@
 </header>
 
 <div class="box">
-    <p>My task for this week was once again related to adding juice and polish to the game, but this time in the form of creating some kind of animated shader effect for building effect ranges. This was once again an open-ended and creative task, which was once again difficult for me. It felt like there was more pressure this week because the team liked the particle effects I implemented last week, so it felt like there were higher expectations to implement something that looks good. As mentioned in my previous post, I work best with a clear guideline of what to implement and what it should look like, and I struggle with these kinds of subjective tasks where what “looks good” is different to everybody. But, since I only had one week, most of my time was spent brainstorming ideas and learning about shaders and tilemaps, so I don’t really have any good results yet.</p>
+    <p>During this 2-week sprint, I continued working on my task of creating an animated shader effect for the building ranges. Unfortunately, I continued to struggle significantly with this task and was unable to produce any good results. I’ve never worked with shaders or tilemaps before, and trying to combine them together was simply not working for me. I spent a lot more time reading articles and watching videos rather than actually working on implementation, and I’m feeling very discouraged by the fact that the amount of time I spent can’t be seen in any physical results.</p>
     <p><strong>Total Time: </strong>12h</p>
-    <p><strong>(1h30m)Experimenting with Animated Tiles</strong></p>
-    <p>Tblah blah blah images: </p>
-  
-    <div class="image-container">
-        <img src="og_tower_range.png" alt="Image 1">
-        <img src="og_farm_range.png" alt="Image 2">
-    </div>
-
-    <p>blah blah blah video: </p>
+    <p><strong>(1h 30m) Experimenting with Animated Tiles</strong></p>
+    <p>I spent an hour and a half trying to build on my idea from last week of using animated tiles to represent the range of the building. I tried to draw new tiles to make it look nicer and this was the result: </p>
   
     <video width="80%" controls style="width: 30%; height: auto;">
         <source src="range_color_fade.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+    
+    <p>Unfortunately, it doesn't look much better than what I had before, despite spending so much time on it. I decided to continue trying to get an actual shader working because I realized this animated tile idea is limited by my artistic abilities and by the fact that I can only animate each tile individually (rather than creating a single effect across the whole range).</p>
+        
+    <p><strong>(6h30m) Experimenting with Meshes and Shaders</strong></p>
 
-    <p><strong>(6h30m)Experimenting with Meshes and Shaders</strong></p>
+    <p>This is where I spent a lot of time reading and watching videos. All I wanted was a simple way to create a shader effect that was confined within the bounds of the tile map, but I was unable to find any helpful information. Shaders applied directly to the tile map take effect on each tile individually. I was able to find people who had implemented something similar with a simple square shape, or with a predefined area for the tile map, but this range map is a very complex shape made of many hexagons, and is generated dynamically and changes as buildings are placed and the town expands. I was unable to find any sources from anyone who had done anything similar and I had literally no idea what to do. </p>
+        
+     <p>I started by trying to convert the tile map into a single mesh, because it seemed like it would be much more simple to apply the kind of shader I wanted to a mesh object. This took a lot of time and there were some bloopers along the way: </p>
+
+    <div class="image-container">
+        <img src="og_tower_range.png" alt="Image 1">
+        <img src="og_farm_range.png" alt="Image 2">
+    </div>
+
+    <p>But I was finally able to accomplish something and get this mesh object dynamically generated in the exact shape and area of the tile map:</p>
+
+    <div class="image-container">
+        <img src="og_tower_range.png" alt="Image 1">
+        <img src="og_farm_range.png" alt="Image 2">
+    </div>
+
+    <p> Unfortunately, after skinking hours into this, I immediately realized that I have no way to render this mesh on top of the ground but below the trees and buildings, because it uses different properties than the sprites and has no sorting layer or order in layer option.</p>
+
+    <p> I moved on to see if I could somehow mask a sprite in the shape of the tile map. I placed this swirling effect sprite on the ground to experiment with. I thought this could look really cool if I could somehow clip it to the range and then maybe make it rotate or something.</p> 
+
+    <div class="image-container">
+        <img src="og_tower_range.png" alt="Image 1">
+        <img src="og_farm_range.png" alt="Image 2">
+    </div>
+    
+    <p>I did a lot of searching for how to implement sprite masking, but everything I could find used only very simple circle and square shapes to mask their sprites. I was completely lost on how to make this work with this complex dynamically generated multi-hexagonal shape.</p>
+
+    <p> At this point, I had spent 6 hours and 30 minutes on this task and not even gotten close to having any concept of an idea of how to actually implement anything. I really wish that I had more to show for my time, and I'm feeling very discouraged. I think this kind of work with shaders and tile maps is just not my strong suit. I'm hoping that next week I can move on to a different task and let somebody who has a better idea of what they're doing take over.</p>
     
     <p><strong>(4h) Studio Meetings</strong></p>
-    <p>I attended two of the weekly Sunday studio meetings, where the team shares updates on their tasks.</p>
+    <p>Finally, I attended two of the weekly Sunday studio meetings, where the team shares updates on their tasks.</p>
+
+
+
+
+
+
+
+
+    
+    <div class="image-container">
+        <img src="og_tower_range.png" alt="Image 1">
+        <img src="og_farm_range.png" alt="Image 2">
+    </div>
+     <video width="80%" controls style="width: 30%; height: auto;">
+        <source src="range_color_fade.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
   
 </div>
 
