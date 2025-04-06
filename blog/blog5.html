@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devblog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #333; /* Dark background */
+            color: #fff; /* Light text for contrast */
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .box {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            position: absolute;
+            left: 50%;
+            width: 80%;
+            transform: translateX(-50%);
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Adds space between images */
+        }
+
+        .image-container img {
+            width: 30%; /* Adjusts width so all fit in a row */
+            max-width: 300px; /* Prevents them from getting too big */
+            height: auto; /* Maintains aspect ratio */
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Adds space between images */
+        }
+
+        .video-container video {
+            width: 30%; /* Adjusts width so all fit in a row */
+            max-width: 300px; /* Prevents them from getting too big */
+            height: auto; /* Maintains aspect ratio */
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>DevBlog #5: 03/23/2025 - 04/06/2025</h1>
+    <a href="index.html" style="color: #BFE5F5;">Back</a>
+</header>
+
+<div class="box">
+    <p>During the past 2 weeks, I continued working on the building range effects, but this time with much better results. After many many hours of banging my head against a wall, I am finally on the right track toward the desired results.</p>
+    <p><strong>Total Time: </strong>12h 30m</p>
+
+    <p><strong>(2h) Experimenting With Shaders and Tilemaps</strong></p>
+    <p>At the beginning of this 2-week sprint, I reached out to a member of one of the R&D teams to ask for advice on how he had created this shader effect for their tile-based game: </p>
+    <div class="image-container">
+        <img src="week5_inspo.png" alt="Image 1">
+    </div>
+    <p>He provided me with a script that converts each tile in the range to a single pixel in a texture, as well as a shader that uses that texture to figure out which tile a rendered pixel belongs to. This makes a lot of sense for square tiles, but is significantly more complicated for Project Dragonheart’s hexagonal-tile-based map. After about 2 hours of trying to modify his approach and achieving results such as the ones below, I realized that this simply wasn’t going to work.
+    <div class="video-container">
+        <video controls style="width: 30%; height: auto;">
+            <source src="week5_fail_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video controls style="width: 30%; height: auto;">
+            <source src="week5_fail_2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <p>The good news is that this attempt helped me learn a lot about how shaders work and what my next approach should be. I realized that what I needed is for each tile in the range to know what its world position is, and use distance from its world position to some central position to create my effect. I couldn’t find any way to achieve this by applying a shader to the tilemap renderer, because each tile shares the properties of the shader. But, I realized that since the shape of the range surrounding a single building is a fixed number of tiles, I might be able to create a single sprite representing the range of one building and kind of “merge” these together as more buildings are placed and the range expands. Then, each sprite would be able to know its own world position and the position of the center of the effect. This idea was very abstract at this point and I wasn’t 100% confident that it made sense or would work, but I kind of just dove in and tried to tackle it step by step.</p>
+
+    <p><strong>(6h 30m) Experimenting With Shaders and Sprites</strong></p>
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    <p><strong>(4h) Studio Meetings</strong></p>
+    <p>I attended both Sunday studio meetings where we shared updates on progress and had group work time.</p>
+  
+</div>
+
+</body>
+</html>
