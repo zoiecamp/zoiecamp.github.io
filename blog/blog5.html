@@ -97,18 +97,47 @@
 
     <p><strong>(6h 30m) Experimenting With Shaders and Sprites</strong></p>
 
+    <p>First, I experimented with converting shader coordinates to world-space coordinates so that I could create an effect like this, where each pixel calculates its world position, determines its distance from the specified "effect center", and gets highlighted based on this distance and elapsed time: </p>
+    <div class="video-container">
+        <video controls style="width: 30%; height: auto;">
+            <source src="week5_test_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <p>Next, I made sure that if I placed 2 of these sprites next to each other with the same shader, they could share the same central position for the effect but store their own world positions so that the rings could expand smoothly over the entire area (the effect isn’t perfectly smooth yet in this video but I fix that later):</p>
+    <div class="video-container">
+        <video controls style="width: 30%; height: auto;">
+            <source src="week5_test_2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <p>Next, I needed to get rid of the transparency stacking between the two sprites. This unfortunately took me like 3 hours to figure out. I tried to use the stencil buffer to do this, making each sprite write to the stencil buffer in such a way that subsequent sprites wouldn’t render in the same area. I thought I could give each sprite a different ref value, create a first pass where the stencil buffer is only written in areas where it hasn’t been written yet, and then a second pass where the sprite is only rendered in areas where the stencil buffer equals the ref value. It took me an unfortunately large amount of time to figure out that this wasn’t working because Unity’s URP doesn’t support multiple passes in shaders. I was starting to think my idea was doomed, but I finally discovered that all I had to do was add these 2 lines of code to my shader, and it worked!</p>
+    <div style="text-align: center;">
+      <pre><code>
+          ZWrite On
+          ZTest Less
+      </code></pre>
+    </div>
+    <div class="video-container">
+        <video controls style="width: 30%; height: auto;">
+            <source src="week5_test_3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <p>Now that this was working, I spent some time creating this sprite in the shape of a single building’s range:</p>
+    <div class="image-container">
+        <img src="week5_area_sprite.png" alt="Image 1">
+    </div>
+    <p>To wrap up this week’s work, I implemented some code to generate these at each tower position, thus spanning the range of the map:</p>
+    <div class="video-container">
+        <video controls style="width: 30%; height: auto;">
+            <source src="week5_success.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <p>The next steps for this are to experiment with different colors and effects and add the code to integrate this into all the existing functionality that enables/disables the range and expands it as buildings are added.</p>
 
 
-
-
-
-
-
-
-
-    
-    
-    
     
     <p><strong>(4h) Studio Meetings</strong></p>
     <p>I attended both Sunday studio meetings where we shared updates on progress and had group work time.</p>
